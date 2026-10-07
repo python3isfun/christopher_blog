@@ -126,8 +126,8 @@
       "detail": "Led development and dissemination of amputation-specific finger prosthetics, transhumeral prosthetics, and cosmetic covers for the wider e-NABLE community. Works with the United e-NABLE Coalition on Uganda cases and partners with the World Action Fund for delivery.",
       "files": [
         {
-          "label": "Chapter proposal deck (PPTX)",
-          "href": "assets/docs/big-hands-enable-proposal.pptx"
+          "label": "Chapter proposal deck (PDF)",
+          "href": "assets/docs/big-hands-enable-proposal.pdf"
         }
       ],
       "images": "img/big-hands",
@@ -152,8 +152,8 @@
       "detail": "The printed sole houses 12 × 27 mm piezoelectric discs feeding a full-wave Schottky bridge rectifier (1N5819), a 134N3P lithium charging/protection module, and an 18650 cell with a 5 V boost converter for USB output. Three experiments measured open-circuit AC voltage, rectified DC voltage, and accumulated battery energy, with energy computed from Joule's law over timed discharge intervals. Iterating from 6 discs in parallel to 12 in series raised output and cut forward voltage drop from 0.7–1.0 V to 0.3–0.4 V.",
       "files": [
         {
-          "label": "Maker Faire deck (PPTX)",
-          "href": "assets/docs/shoe-sole-maker-faire-2025.pptx"
+          "label": "Maker Faire deck (PDF)",
+          "href": "assets/docs/shoe-sole-maker-faire-2025.pdf"
         },
         {
           "label": "Build writeup on Instructables",

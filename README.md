@@ -142,3 +142,23 @@ upright). `optimize_images.py` bakes that rotation into the pixels via
 `magick montage` among them — ignore the tag and will show portrait photos
 sideways. Check orientation against the files in `site/assets/img/`, not against
 a contact sheet.
+
+## The presentation decks
+
+Both decks are published as PDF, not PowerPoint — they open in the browser and
+are about a tenth the size. Regenerate with:
+
+```bash
+soffice --headless --convert-to pdf --outdir /tmp "originals/source-files/<deck>.pptx"
+```
+
+The Big Hands proposal is **trimmed**: only 14 of its 22 slides are published.
+If you regenerate it, drop these again before publishing:
+
+- slides 13-14 — recipient case photos. They show identifiable people, some of
+  them minors, in Uganda and the West Bank. Publish only with their consent.
+- slide 16 — the contact slide, which carries the cell number deliberately
+  removed from the published resume.
+- slides 18-22 — internal to-do and strategy notes, not written for an audience.
+
+The shoe sole deck is published in full; it has no personal data in it.
