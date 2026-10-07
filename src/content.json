@@ -1,0 +1,371 @@
+{
+  "person": {
+    "name": "Christopher Huang",
+    "tagline": "High school engineer building low-cost prosthetics, sensing hands, and things that print.",
+    "blurb": "I'm a senior at Irvington High School in Fremont, CA. I design and 3D print assistive devices, run a volunteer prosthetics chapter, and publish research on additive manufacturing and sensor-integrated hands. Eagle Scout. I also take pictures and build in Minecraft.",
+    "email": "chrhua802@gmail.com",
+    "location": "Fremont, CA",
+    "links": [
+      {
+        "label": "Email",
+        "href": "mailto:chrhua802@gmail.com"
+      },
+      {
+        "label": "GitHub",
+        "href": "#TODO-github-url"
+      },
+      {
+        "label": "Resume (PDF)",
+        "href": "assets/docs/christopher-huang-resume.pdf"
+      },
+      {
+        "label": "Big Hands e-NABLE",
+        "href": "#TODO-chapter-instagram"
+      }
+    ]
+  },
+  "research": [
+    {
+      "id": "ai-driven-am",
+      "title": "Artificial Intelligence Driven Design and Geometry Optimization in Additive Manufacturing",
+      "venue": "National High School Journal of Science (NHSJS)",
+      "status": "Passed peer review, July 2026",
+      "role": "Sole author",
+      "date": "Sept 2025 – Jul 2026",
+      "summary": "A structured literature review of 19 studies (2018–2026) on how AI actually supports additive-manufacturing design decisions.",
+      "outcome": "Thematic synthesis identified four connected roles for AI in AM design: accelerating design search, generating candidate geometries, coordinating decisions across structural scales, and folding manufacturing- and process-aware constraints into optimization.",
+      "motivation": "AM design and geometry optimization are bottlenecked by repeated simulation, very large design spaces, and manufacturing constraints that most optimizers ignore.",
+      "method": "Scopus as the primary database with Google Scholar for citation tracing; screened 2018–2026 publications down to 19 core studies; compared them across AI method, AM process, geometry type, validation approach, performance metrics, and reported limitations.",
+      "findings": "Key gaps remain: limited datasets, weak generalization testing, low interpretability, limited process adaptivity, and underdeveloped industrial qualification standards.",
+      "files": [
+        {
+          "label": "Manuscript (DOCX)",
+          "href": "assets/docs/ai-driven-am/Artificial Intelligence Driven Design and Geometry Optimization in Additive Manufacturing Recent Advances and Future Directions.docx"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "anthropomorphic-hand",
+      "title": "Additive Manufacturing of an Anthropomorphic Hand using Force Resistive Sensors for Object Detection",
+      "venue": "Journal of Future Science and Engineering (JFSE)",
+      "status": "Submitted August 2026, in review",
+      "role": "First author · SDSU Yang Lab",
+      "date": "Jun 2026 – Sept 2026",
+      "summary": "A multimaterial 3D-printed robotic hand with film pressure sensors that identifies what it is holding at 98.1% accuracy.",
+      "outcome": "A random forest model trained on 4,500 rows and tested on 1,000 rows classified four objects from force-sensor input at 98.1% accuracy — showing AM plus low-cost force resistive sensors can produce a bioinspired hand with object detection.",
+      "motivation": "Current robotic hands are limited in grip-force sensitivity and cost. A clinically prescribable, commercially available prosthetic can cost upwards of $20,000 USD.",
+      "method": "Multimaterial FDM printing — PLA for the fingers and arm, TPU for the joints and palm — with force resistive sensors integrated to read pressure during grasp. Training data was collected by repeatedly grasping four distinct objects.",
+      "findings": "Accurate object detection from grasp pressure alone opens paths into adaptive grasp, soft robotics, smart prosthetics, human-skin biomimicry, and material-aware computer vision.",
+      "files": [
+        {
+          "label": "JFSE formatted paper (PDF)",
+          "href": "assets/docs/anthropomorphic-hand/JFSE_Formatted_Anthropomorphic_Hand_Paper.docx.pdf"
+        },
+        {
+          "label": "Full manuscript (PDF)",
+          "href": "assets/docs/anthropomorphic-hand/Additive Manufacturing of an Anthropomorphic Hand using Force Resistive Sensors for Object Detection.pdf"
+        }
+      ],
+      "images": "img/anthropomorphic-hand",
+      "hero": "assets/img/heroes/hand-research.jpg"
+    },
+    {
+      "id": "remote-prosthetic-sizing",
+      "title": "Measure Before You Reconstruct: Remote Measurement of Residual-Limb Circumference from Sparse Smartphone Silhouettes",
+      "venue": "Manuscript in preparation",
+      "status": "Authoring, fall 2026",
+      "role": "Sole author · independent research",
+      "date": "Jan 2026 – present",
+      "summary": "A remote prosthetic-socket sizing pipeline that measures limb circumference from a handful of calibrated phone photos — no dense 3D reconstruction needed.",
+      "outcome": "Applying Cauchy's projection formula to calibrated smartphone silhouettes hit 97.5–99.8% spectral accuracy across 33 OpenLimbTT models (validated by Fourier analysis), while eliminating COLMAP's dense-reconstruction overhead. Benchmarked against VGGT to identify failure modes.",
+      "motivation": "e-NABLE volunteers fit recipients on the other side of the world from photos. Better remote sizing means better-fitting devices for the Uganda and West Bank cases our chapter works on.",
+      "method": "Cauchy-based silhouette measurement algorithm with perspective corrections; Fourier analysis for spectral validation against the OpenLimbTT model set.",
+      "findings": "Measuring directly from silhouettes beats reconstructing geometry first, for this task.",
+      "files": [],
+      "images": [],
+      "note": "TODO: manuscript file was missing from the source archive — drop the PDF in assets/docs/remote-prosthetic-sizing/ and add it to files[]."
+    },
+    {
+      "id": "ucsb-sra",
+      "title": "Evaluating Radicalization through Autism Diagnosis Criteria and Media Addiction",
+      "venue": "UCSB Summer Research Academies, Track 12 “Digital Brains”",
+      "status": "Completed, Summer 2025",
+      "role": "First author",
+      "date": "Jun 2025 – Jul 2025",
+      "summary": "A 4-week study asking which specific autism diagnostic traits — not autism as a monolith — relate to radicalization susceptibility.",
+      "outcome": "Extremism correlated most with circumscribed interests; violent extremism correlated most with sensory/motor deficiencies. Problematic media use was not a significant moderating factor.",
+      "motivation": "Existing work either treats autistic populations as homogenous or relies on narrow journalistic case studies, leaving no usable foundation for prevention programs.",
+      "method": "Ritvo Autism Asperger Diagnostic Scale–Revised for autism symptomatology, the Problematic Media Use Measure for digital media addiction, and the Extremism Scale plus the Pro-violence and Illegal Acts in Relation to Extremism Scale for radicalization outcomes.",
+      "findings": "Results are meant as a foundation for informed, trait-specific radicalization prevention support systems rather than blanket assumptions.",
+      "files": [
+        {
+          "label": "Paper (PDF)",
+          "href": "assets/docs/ucsb-sra/Evaluating radicalization through autism diagnosis criteria and media addiction.pdf"
+        }
+      ],
+      "images": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "big-hands-enable",
+      "title": "Big Hands e-NABLE Fremont",
+      "subtitle": "Founder & President · Dec 2025 – present",
+      "featured": true,
+      "tags": [
+        "prosthetics",
+        "3D printing",
+        "nonprofit",
+        "leadership"
+      ],
+      "summary": "I founded a chapter of the global e-NABLE network that designs and 3D prints free prostheses for the limb-different community.",
+      "outcome": "Coordinated with the World Action Fund to donate 15 custom prostheses to recipients in the West Bank and Uganda, with 40+ Ugandan cases in development. Raised over $4,000 through community events, sports tournaments, and local donor outreach. Mentored the Big Hands Next-Gen team to 30+ members, teaching CAD and 3D printing.",
+      "motivation": "A clinically prescribed prosthetic can run past $20,000. e-NABLE's open-source designs and a printer get a working device to a kid for the cost of filament — the bottleneck is volunteers who can actually design, fit, and ship them.",
+      "role": "Founded and lead the chapter: technical, finance, and social media teams; recipient intake; measurement and fitting; device validation; donor outreach.",
+      "detail": "Led development and dissemination of amputation-specific finger prosthetics, transhumeral prosthetics, and cosmetic covers for the wider e-NABLE community. Works with the United e-NABLE Coalition on Uganda cases and partners with the World Action Fund for delivery.",
+      "files": [
+        {
+          "label": "Chapter proposal deck (PPTX)",
+          "href": "assets/docs/big-hands-enable-proposal.pptx"
+        }
+      ],
+      "images": "img/big-hands",
+      "note": "TODO: pick the good images out of originals/slides-media/ and move them into this project's img folder.",
+      "hero": "assets/img/heroes/big-hands.jpg"
+    },
+    {
+      "id": "shoe-sole",
+      "title": "Kinetic Energy Harvesting Shoe Sole",
+      "subtitle": "Rotary Young Innovators 3D Printing Challenge finalist · 2025",
+      "featured": true,
+      "tags": [
+        "3D printing",
+        "energy",
+        "electronics",
+        "sensors"
+      ],
+      "summary": "A 3D-printed shoe sole with embedded piezoelectric discs that harvests the energy of walking into a rechargeable battery.",
+      "outcome": "The prototype measurably stored harvested energy: 14.48 V peak open-circuit output under simulated footsteps, and a 0.009–0.013 V battery rise over a 30-minute walk, confirmed across two independent battery discharge experiments.",
+      "motivation": "Kinetic energy from human movement is abundant and almost entirely wasted. Capturing even a fraction of it is a step away from fossil-fuel reliance — and it rewards walking.",
+      "role": "Co-designed the project with Kevin Xia: sole CAD, electrical design, and the experimental protocol.",
+      "detail": "The printed sole houses 12 × 27 mm piezoelectric discs feeding a full-wave Schottky bridge rectifier (1N5819), a 134N3P lithium charging/protection module, and an 18650 cell with a 5 V boost converter for USB output. Three experiments measured open-circuit AC voltage, rectified DC voltage, and accumulated battery energy, with energy computed from Joule's law over timed discharge intervals. Iterating from 6 discs in parallel to 12 in series raised output and cut forward voltage drop from 0.7–1.0 V to 0.3–0.4 V.",
+      "files": [
+        {
+          "label": "Maker Faire deck (PPTX)",
+          "href": "assets/docs/shoe-sole-maker-faire-2025.pptx"
+        },
+        {
+          "label": "Build writeup on Instructables",
+          "href": "https://www.instructables.com/Piezoelectric-Shoe-Soles/"
+        }
+      ],
+      "images": "img/shoe-sole",
+      "note": "TODO: pick the good images out of originals/slides-media/ and move them into this project's img folder.",
+      "hero": "assets/img/heroes/shoe-sole.jpg"
+    },
+    {
+      "id": "exoskeleton",
+      "title": "Load-Bearing Upper Body Exoskeleton",
+      "subtitle": "Central California Invention Convention & Rotary 3D Printing Challenge finalist · 2026",
+      "featured": true,
+      "tags": [
+        "3D printing",
+        "mechanical design",
+        "ergonomics"
+      ],
+      "summary": "A passive upper-body exoskeleton that supports safe manual handling and improves ergonomic performance in high-strain environments.",
+      "outcome": "Finalist in both the 2026 Central California Invention Convention and the 2026 Rotary Young Innovators 3D Printing Challenge.",
+      "motivation": "Repetitive lifting injuries are a preventable cost of manual work; a printable passive support puts load off the lower back without a powered system.",
+      "role": "Designer.",
+      "detail": "Presented at the 2026 Central California Invention Convention and the Rotary Young Innovators 3D Printing Challenge, where it reached the finals in both. TODO: add the load path, material choices, and test results.",
+      "files": [],
+      "images": "img/exoskeleton",
+      "hero": "assets/img/heroes/exoskeleton.jpg"
+    },
+    {
+      "id": "cubesat",
+      "title": "Maker³ 1U CubeSat — Structures Team",
+      "subtitle": "Fremont Student Makers · Sept 2024 – present",
+      "featured": false,
+      "tags": [
+        "aerospace",
+        "mechanical design",
+        "machining"
+      ],
+      "summary": "Structural design and machining protocols for a 1U CubeSat projected to launch in 2027.",
+      "outcome": "Contributed to designing and editing the structure and organized machining protocols for space-grade parts of the Maker³ 1U CubeSat.",
+      "motivation": "Space-grade parts fail on tolerances and process discipline, not ideas — so the machining protocol matters as much as the CAD.",
+      "role": "Structures team. Trained under Irvington High School's GIS CubeSat team during the creation of Prometheus Alpha, now launched into space.",
+      "detail": "TODO: add structural details, material choices, and current build status.",
+      "files": [],
+      "images": [],
+      "note": "TODO: no images in source materials. Add to assets/img/cubesat/."
+    },
+    {
+      "id": "solic",
+      "title": "SoliC — Solar Panel Self-Cleaning System",
+      "subtitle": "Conrad Challenge Innovator · 2024–2025",
+      "featured": false,
+      "tags": [
+        "sustainability",
+        "materials",
+        "product design"
+      ],
+      "summary": "A passive solar-panel cleaning system combining a dew collector with super-hydrophobic and super-hydrophilic panel coatings.",
+      "outcome": "Recognized as a Conrad Challenge 2024–2025 Innovator.",
+      "motivation": "Dust on panels quietly destroys solar yield, and washing them costs water and labor — especially wrong in the dry, dusty places solar works best.",
+      "role": "Product designer and video maker. Invented and developed the dew collector, the system's major innovation; contributed to adopting the hydrophobic/hydrophilic coating approach.",
+      "detail": "TODO: add how the dew collector works and any efficiency-recovery measurements.",
+      "files": [],
+      "images": [],
+      "note": "TODO: no images in source materials. Add to assets/img/solic/."
+    },
+    {
+      "id": "mantis-blades",
+      "title": "Arasaka Mantis Blades",
+      "subtitle": "FUSD Engineering Expo · 2025",
+      "featured": false,
+      "tags": [
+        "3D printing",
+        "mechanisms",
+        "code"
+      ],
+      "summary": "A 3D-printed articulated prop build, presented at the 2025 FUSD Engineering Expo.",
+      "outcome": "Completed and presented at the Expo; main control code published on GitHub.",
+      "motivation": "A deployment mechanism that has to fold flat and lock out is a real linkage problem wearing a costume.",
+      "role": "Designer and builder.",
+      "detail": "TODO: add the mechanism description, actuation, and a link to the GitHub repo.",
+      "files": [
+        {
+          "label": "Code on GitHub",
+          "href": "#TODO-github-repo-url"
+        }
+      ],
+      "images": [],
+      "note": "TODO: no images in source materials. Add to assets/img/mantis-blades/, and replace the GitHub placeholder URL."
+    },
+    {
+      "id": "rotary-competition",
+      "title": "Rotary Young Innovators — Competition Gallery",
+      "subtitle": "Two-time finalist · 2025, 2026",
+      "featured": false,
+      "tags": [
+        "competition",
+        "3D printing"
+      ],
+      "summary": "Photos from the Rotary Young Innovators 3D Printing Challenge, where the shoe sole (2025) was a finalist.",
+      "outcome": "Finalist in 2025 and again in 2026.",
+      "motivation": "",
+      "role": "",
+      "detail": "",
+      "files": [],
+      "images": "img/rotary-competition",
+      "hero": "assets/img/heroes/rotary.jpg"
+    }
+  ],
+  "leadership": [
+    {
+      "org": "Scouting America Troop 468",
+      "role": "Eagle Scout · ASPL and other leadership positions",
+      "date": "May 2020 – present",
+      "points": [
+        "Earned Eagle Scout rank in 2026.",
+        "Eagle project: landscaped and constructed habitat planter beds for Math Science Nucleus at Tule Ponds at Tyson Lagoon to bolster local pollinator populations.",
+        "200+ monthly meetings, outings, and service events across 6 years.",
+        "Developed revisions to the troop's requirement system for more involved teaching practices; ran speaking and mentorship sessions to rebuild senior scout participation."
+      ]
+    },
+    {
+      "org": "Scouting America Troop 488",
+      "role": "SPL / ASPL — an FCSN-affiliated troop for scouts with special needs",
+      "date": "Aug 2024 – present",
+      "points": [
+        "Taught scouting skills in a designed setting built to accommodate scouts with special needs.",
+        "Helped incoming SPLs adapt activities and Scouting protocols.",
+        "Planned and led specially designed troop meetings and outings."
+      ]
+    },
+    {
+      "org": "Irvington High School Maker Club",
+      "role": "Executive Officer / Publicity Officer / Secretary",
+      "date": "Nov 2024 – present",
+      "points": [
+        "Grew the club from 40 to 130+ members through publicity, documentation, and event organization.",
+        "Founded the club's Prosthetics Branch, teaching CAD and prosthetic actuation and connecting students to e-NABLE design work.",
+        "Organized the school's first SpeedCAD and CAD Design competitions."
+      ]
+    },
+    {
+      "org": "Friends of Children with Special Needs (FCSN)",
+      "role": "Volunteer",
+      "date": "Jan 2023 – present",
+      "points": [
+        "1:1 tutoring and afterschool classes for children with special needs.",
+        "President's Volunteer Service Award — Gold (2023, 2024, 2025)."
+      ]
+    },
+    {
+      "org": "Camp Emerald Bay",
+      "role": "Youth Staff · Catalina Island, CA",
+      "date": "Summer 2024",
+      "points": [
+        "4-week staffing position running leadership training at the Scouting summer camp."
+      ]
+    }
+  ],
+  "awards": [
+    "AP Scholar with Distinction (2026)",
+    "Eagle Scout (2026)",
+    "Northern/Central California Invention Convention Finalist (2026)",
+    "Rotary Young Innovators 3D Printing Challenge Finalist (2025, 2026)",
+    "President's Volunteer Service Award — Gold (2023, 2024, 2025)",
+    "Conrad Challenge Innovator (2024–2025)",
+    "Sparkhub Foundation Personal Achievements Award and team Best Initiative Award (2026)"
+  ],
+  "skills": {
+    "Code": [
+      "Python",
+      "C++",
+      "Java",
+      "HTML/CSS"
+    ],
+    "CAD & 3D": [
+      "Fusion 360",
+      "Meshmixer",
+      "Mudbox",
+      "PrusaSlicer",
+      "Bambu Slicer"
+    ],
+    "Visual": [
+      "DaVinci Resolve",
+      "Premiere Pro",
+      "Lightroom",
+      "Krita"
+    ],
+    "Languages": [
+      "English",
+      "Mandarin"
+    ]
+  },
+  "hobbies": [
+    {
+      "id": "photography",
+      "title": "Photography",
+      "blurb": "TODO: pick 8–12 favorite shots and drop them in assets/img/photography/.",
+      "images": []
+    },
+    {
+      "id": "minecraft",
+      "title": "Minecraft Building",
+      "blurb": "TODO: add screenshots of favorite builds to assets/img/minecraft/.",
+      "images": []
+    },
+    {
+      "id": "making",
+      "title": "Drawing, Graphic Design & Biking",
+      "blurb": "TODO: add a few pieces, or fold this into the photography page.",
+      "images": []
+    }
+  ]
+}

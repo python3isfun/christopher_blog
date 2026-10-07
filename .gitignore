@@ -1,0 +1,7 @@
+# Source material and backups — large, and some of it must never be published.
+originals/
+
+# OS and editor noise
+.DS_Store
+*.swp
+__pycache__/

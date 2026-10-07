@@ -1,0 +1,195 @@
+/* christopherhuang.* — single stylesheet, no framework.
+   Light and dark are both first-class; dark follows the OS preference. */
+
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --text: #1b1a18;
+  --muted: #6b675f;
+  --line: #e2ded6;
+  --accent: #b2502b;
+  --accent-soft: #f6ebe5;
+  --radius: 10px;
+  --maxw: 68rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14130f;
+    --surface: #1d1c18;
+    --text: #efece6;
+    --muted: #a39d92;
+    --line: #322f29;
+    --accent: #e0825a;
+    --accent-soft: #2a211c;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #14130f;
+  --surface: #1d1c18;
+  --text: #efece6;
+  --muted: #a39d92;
+  --line: #322f29;
+  --accent: #e0825a;
+  --accent-soft: #2a211c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.65 ui-sans-serif, -apple-system, "Segoe UI", Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
+h1 { font-size: clamp(1.9rem, 4.5vw, 2.9rem); margin: 0 0 .4rem; }
+h2 { font-size: 1.35rem; margin: 2.4rem 0 .8rem; }
+h3 { font-size: 1.07rem; margin: 0 0 .25rem; }
+
+/* ---------------------------------------------------------------- chrome */
+
+.site-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  max-width: var(--maxw); margin: 0 auto;
+  padding: 1.5rem 16px 1rem;
+}
+.brand { font-weight: 650; color: var(--text); letter-spacing: -0.01em; }
+.site-head nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.site-head nav a { color: var(--muted); font-size: .95rem; }
+.site-head nav a.active, .site-head nav a:hover { color: var(--text); }
+
+main { max-width: var(--maxw); margin: 0 auto; padding: 1rem 16px 5rem; }
+
+.site-foot {
+  border-top: 1px solid var(--line);
+  color: var(--muted); font-size: .9rem;
+  max-width: var(--maxw); margin: 0 auto; padding: 1.5rem 16px 3rem;
+}
+
+/* ---------------------------------------------------------------- home hero */
+
+.hero {
+  display: grid; grid-template-columns: 1.6fr 1fr;
+  gap: 2.5rem; align-items: center;
+  padding: 1.5rem 0 1rem;
+}
+.tagline { font-size: 1.2rem; color: var(--text); margin: .3rem 0 1rem; }
+.blurb, .lede { color: var(--muted); max-width: 46rem; }
+.lede { font-size: 1.08rem; margin: .4rem 0 2rem; }
+.hero-img img, .hero-img .thumb-empty {
+  width: 100%; aspect-ratio: 4 / 5; border-radius: var(--radius); object-fit: cover;
+}
+
+.btn-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.2rem; }
+.btn {
+  display: inline-block; padding: .5rem .95rem;
+  border: 1px solid var(--line); border-radius: 100px;
+  background: var(--surface); color: var(--text); font-size: .92rem;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+.band { margin-top: 3.5rem; }
+.more { margin-top: 1.4rem; font-size: .95rem; }
+
+/* A hero with no headshot collapses to one column instead of leaving a gap. */
+.hero-noimg { grid-template-columns: 1fr; max-width: 46rem; }
+
+/* ---------------------------------------------------------------- cards */
+
+.card-grid {
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+}
+.card {
+  display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); overflow: hidden;
+  color: var(--text); transition: border-color .15s ease, transform .15s ease;
+}
+.card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.card-thumb { aspect-ratio: 3 / 2; background: var(--accent-soft); }
+.card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-body { padding: 1rem 1.1rem 1.2rem; }
+.card .summary { color: var(--muted); font-size: .93rem; margin: .5rem 0 0; }
+
+/* Cards without a photo carry their weight with type instead of an empty box. */
+.card-textonly { background: var(--accent-soft); border-color: transparent; }
+.card-textonly .card-body { padding-top: 1.4rem; }
+.card-textonly h3 { font-size: 1.15rem; }
+.kicker { color: var(--accent); font-size: .78rem; text-transform: uppercase;
+          letter-spacing: .07em; margin: 0 0 .35rem; }
+.sub { color: var(--muted); font-size: .92rem; margin: 0; }
+
+.paper-list { list-style: none; padding: 0; margin: 0; }
+.paper-list li {
+  padding: 1rem 0; border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: .2rem;
+}
+.paper-list li:first-child { border-top: 1px solid var(--line); }
+
+/* ---------------------------------------------------------------- detail pages */
+
+.detail { max-width: 46rem; }
+.detail h1 { margin-top: .5rem; }
+.detail p { margin: .6rem 0 1rem; }
+.detail .sub { margin-bottom: 1.2rem; }
+
+.todo {
+  background: var(--accent-soft); border-left: 3px solid var(--accent);
+  padding: .7rem .9rem; border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: .9rem; color: var(--text);
+}
+
+.files ul { list-style: none; padding: 0; }
+.files li { padding: .35rem 0; }
+
+.gallery {
+  display: grid; gap: .6rem; margin: 1.5rem 0;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+}
+.gallery figure { margin: 0; }
+.gallery img {
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  border-radius: 8px; background: var(--accent-soft); cursor: zoom-in;
+}
+
+/* ---------------------------------------------------------------- about */
+
+.role { padding: 1.3rem 0; border-bottom: 1px solid var(--line); }
+.role ul { margin: .7rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+.role li { margin: .3rem 0; }
+.awards { columns: 2; column-gap: 2rem; color: var(--muted); padding-left: 1.1rem; }
+.awards li { margin: .35rem 0; break-inside: avoid; }
+.skill-grid { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.skill p { color: var(--muted); margin: 0; font-size: .93rem; }
+
+/* ---------------------------------------------------------------- lightbox */
+
+#lightbox {
+  position: fixed; inset: 0; z-index: 50; display: none;
+  background: rgba(10, 9, 8, .92);
+  align-items: center; justify-content: center; padding: 24px;
+}
+#lightbox.open { display: flex; }
+#lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+#lightbox button {
+  position: absolute; top: 18px; right: 22px;
+  background: none; border: 0; color: #fff; font-size: 2rem;
+  cursor: pointer; line-height: 1;
+}
+
+/* ---------------------------------------------------------------- narrow */
+
+@media (max-width: 720px) {
+  .hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-img { order: -1; max-width: 13rem; }
+  .awards { columns: 1; }
+}
