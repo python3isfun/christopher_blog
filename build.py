@@ -2,12 +2,12 @@
 """Static site generator for christopherhuang.dev.
 
 Single source of truth is src/content.json. Running this script regenerates
-every HTML page in site/ from that data. Assets under site/assets/ are never
+every HTML page in docs/ from that data. Assets under docs/assets/ are never
 touched. No dependencies beyond the Python standard library.
 
 Usage:
     python3 build.py            # build
-    python3 build.py --serve    # build, then serve site/ on :8000
+    python3 build.py --serve    # build, then serve docs/ on :8000
 """
 
 import html
@@ -18,7 +18,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
-OUT = os.path.join(ROOT, "site")
+OUT = os.path.join(ROOT, "docs")
 ASSETS = os.path.join(OUT, "assets")
 
 IMG_EXT = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif")
@@ -30,9 +30,9 @@ def e(text):
 
 
 def gallery_files(rel_dir):
-    """List image paths (relative to site/) inside an assets subdirectory.
+    """List image paths (relative to docs/) inside an assets subdirectory.
 
-    `rel_dir` is relative to site/assets, e.g. "img/big-hands". Returns [] when
+    `rel_dir` is relative to docs/assets, e.g. "img/big-hands". Returns [] when
     the directory is absent so a project with no photos still builds.
     """
     if not rel_dir or not isinstance(rel_dir, str):
@@ -158,7 +158,7 @@ def build_home(c):
     links = " ".join(
         f'<a class="btn" href="{e(l["href"])}">{e(l["label"])}</a>' for l in p["links"]
     )
-    # headshot is optional: drop one at site/assets/img/headshot.jpg to use it
+    # headshot is optional: drop one at docs/assets/img/headshot.jpg to use it
     shot = "assets/img/headshot.jpg"
     has_shot = os.path.exists(os.path.join(OUT, shot))
     hero_img = (f'<div class="hero-img"><img src="{e(shot)}" alt="{e(p["name"])}"></div>'
@@ -329,7 +329,7 @@ def main():
     for name in ("style.css", "app.js"):
         shutil.copy(os.path.join(SRC, name), os.path.join(ASSETS, name))
 
-    print(f"built {len(written)} pages into site/")
+    print(f"built {len(written)} pages into docs/")
     for rel in written:
         print("  ", rel)
 

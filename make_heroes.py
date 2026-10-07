@@ -10,7 +10,7 @@ Edit HEROES below, then run:
 
     python3 make_heroes.py
 
-Output lands in site/assets/img/heroes/ and is referenced from content.json
+Output lands in docs/assets/img/heroes/ and is referenced from content.json
 (a project's "hero" field) or, for the home page, as assets/img/headshot.jpg.
 """
 
@@ -19,10 +19,10 @@ import os
 from PIL import Image, ImageOps
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-IMG = os.path.join(ROOT, "site", "assets", "img")
+IMG = os.path.join(ROOT, "docs", "assets", "img")
 OUT = os.path.join(IMG, "heroes")
 
-# name -> (source photo under site/assets/img, width:height, vertical anchor)
+# name -> (source photo under docs/assets/img, width:height, vertical anchor)
 # anchor: 0.0 keeps the top of the frame, 0.5 centers, 1.0 keeps the bottom.
 # Portraits of people usually want a low number so heads are not cropped.
 HEROES = {

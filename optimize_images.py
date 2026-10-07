@@ -2,7 +2,7 @@
 """Resize and strip metadata from site photos.
 
 Phone photos land at ~1 MB each, which is far more than a web page needs.
-This rewrites everything in site/assets/img/ to two sizes:
+This rewrites everything in docs/assets/img/ to two sizes:
 
     <name>.jpg        long edge 1600px  — full view / lightbox
     <name>.thumb.jpg  long edge  640px  — card and gallery grid
@@ -22,7 +22,7 @@ import sys
 from PIL import Image, ImageOps
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-IMG = os.path.join(ROOT, "site", "assets", "img")
+IMG = os.path.join(ROOT, "docs", "assets", "img")
 ORIG = os.path.join(ROOT, "originals", "photos")
 
 FULL_EDGE = 1600

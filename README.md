@@ -7,18 +7,18 @@ Static site. No npm, no framework, no build dependencies beyond Python 3.
 All text lives in **`src/content.json`**. Edit that, then rebuild:
 
 ```bash
-python3 build.py            # regenerate site/
+python3 build.py            # regenerate docs/
 python3 build.py --serve    # regenerate, then preview at http://localhost:8000
 ```
 
-`build.py` rewrites every `.html` file in `site/`. Never edit the generated HTML
+`build.py` rewrites every `.html` file in `docs/`. Never edit the generated HTML
 directly — changes there are lost on the next build. Styling is in
 `src/style.css`, the gallery lightbox in `src/app.js`; both are copied into
-`site/assets/` on build.
+`docs/assets/` on build.
 
 ## Adding photos to a project
 
-1. Drop images into `site/assets/img/<folder>/` (`.jpg`, `.png`, `.webp`).
+1. Drop images into `docs/assets/img/<folder>/` (`.jpg`, `.png`, `.webp`).
 2. Set that project's `"images"` field in `content.json` to `"img/<folder>"`.
 3. Rebuild. Images are picked up automatically in filename order, so rename
    them in the order you want them shown (`01-cad.jpg`, `02-print.jpg`, …).
@@ -28,7 +28,7 @@ The first image in a folder becomes the project's card thumbnail.
 ## Adding a project or paper
 
 Append an object to the `projects` or `research` array in `content.json`. The
-`id` becomes the page URL (`site/projects/<id>.html`). A `note` field renders as
+`id` becomes the page URL (`docs/projects/<id>.html`). A `note` field renders as
 a visible TODO banner on the page — useful while a project is still missing
 material, and a reminder to remove it before sharing the link.
 
@@ -38,8 +38,12 @@ specific role, and technical detail last.
 
 ## Deploying
 
-The `site/` directory is the whole website. Push the repo and point GitHub Pages
-at it, or drag `site/` into Netlify or Cloudflare Pages.
+The `docs/` directory is the whole website. GitHub Pages serves it directly:
+Settings -> Pages -> Source "Deploy from a branch" -> branch `main`, folder
+`/docs`. No build step runs on GitHub, so commit the generated `docs/` along
+with any change to `src/`.
+
+For Netlify or Cloudflare Pages instead, point the publish directory at `docs`.
 
 Use a real domain you own rather than a platform subdomain — a portfolio link on
 a resume outlives the host it started on.
@@ -47,7 +51,7 @@ a resume outlives the host it started on.
 ## Source materials
 
 Everything that is **not** part of the website lives under `originals/`, which
-is excluded from git. `site/assets/` holds only the unpacked, web-ready copies.
+is excluded from git. `docs/assets/` holds only the unpacked, web-ready copies.
 
 ```
 originals/
@@ -62,9 +66,9 @@ originals/
                        the site — safe to move elsewhere entirely
 ```
 
-- `site/assets/img/_needs-reupload/` — 10 Big Hands photos that arrived
+- `docs/assets/img/_needs-reupload/` — 10 Big Hands photos that arrived
   truncated mid-file (cut off at exactly 217,088 bytes). Re-export these from
-  the original camera roll and move them into `site/assets/img/big-hands/`.
+  the original camera roll and move them into `docs/assets/img/big-hands/`.
 - The resume is published as a **redacted** PDF: home address and phone number
   are stripped, email kept. If you regenerate it from the `.docx`, redact again
   before committing.
@@ -75,15 +79,15 @@ originals/
 decks (50 files). It is **not** published — it's raw material, mixed in with QR
 codes, stock photos, and chart exports. Pick the good ones (CAD renders, circuit
 diagrams, test-rig photos, result charts) and move them into the relevant
-`site/assets/img/<project>/` folder.
+`docs/assets/img/<project>/` folder.
 
 There is also a headshot in `originals/slides-media/shoe-sole-slides/` worth
-checking — the home page needs one at `site/assets/img/headshot.jpg`.
+checking — the home page needs one at `docs/assets/img/headshot.jpg`.
 
 ## Photos: resizing
 
 Photos straight off a phone are ~1 MB each — far more than a page needs. After
-dropping new images into `site/assets/img/<folder>/`, run:
+dropping new images into `docs/assets/img/<folder>/`, run:
 
 ```bash
 python3 optimize_images.py            # process anything new
@@ -116,7 +120,7 @@ Edit the `HEROES` dict at the top of that file. Each entry is
 `0.0` to keep the top of the frame, `0.5` to centre, `1.0` to keep the bottom.
 Portraits of people want a low anchor so heads are not cropped off.
 
-Output goes to `site/assets/img/heroes/`. A project uses one via its `"hero"`
+Output goes to `docs/assets/img/heroes/`. A project uses one via its `"hero"`
 field in `content.json`; the home page picks up `assets/img/headshot.jpg`
 automatically if present.
 
@@ -140,7 +144,7 @@ tag doing the real rotation (14 need a quarter turn, 6 need a half turn, 23 are
 upright). `optimize_images.py` bakes that rotation into the pixels via
 `exif_transpose`, so the shipped files are correct. Beware that some tools —
 `magick montage` among them — ignore the tag and will show portrait photos
-sideways. Check orientation against the files in `site/assets/img/`, not against
+sideways. Check orientation against the files in `docs/assets/img/`, not against
 a contact sheet.
 
 ## The presentation decks
